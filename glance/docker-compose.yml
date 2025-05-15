@@ -5,7 +5,6 @@ services:
         restart: unless-stopped
         volumes:
             - ./glance/config/glance.yml:/app/config/glance.yml
-            - ./assets:/app/assets
             - ./glance/assets/:/app/assets
             # Optionally, also mount docker socket if you want to use the docker containers widget
             # - /var/run/docker.sock:/var/run/docker.sock:ro
