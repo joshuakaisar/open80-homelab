@@ -4,8 +4,8 @@ services:
         image: glanceapp/glance
         restart: unless-stopped
         volumes:
-            - ./config:/app/config/config:/app/config
-            - ./config:/app/config/assets/:/app/assets
+            - /home/joshua-kaisar/homelab/open80-homelab/glance/config:/app/config
+            - /home/joshua-kaisar/homelab/open80-homelab/glance/assets/:/app/assets
             # Optionally, also mount docker socket if you want to use the docker containers widget
             # - /var/run/docker.sock:/var/run/docker.sock:ro
         ports:
