@@ -1,4 +1,4 @@
-- name: Home
+- name: Open80
   # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
   # hide-desktop-navigation: true
   columns:
@@ -48,7 +48,7 @@
             - type: group
               widgets:
                   - type: reddit
-                    subreddit: technology
+                    subreddit: homelab
                     show-thumbnails: true
                   - type: reddit
                     subreddit: lemmino
