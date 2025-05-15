@@ -7,19 +7,12 @@
             - type: calendar
               first-day-of-week: monday
 
-            - type: rss
-              limit: 10
-              collapse-after: 3
-              cache: 12h
-              feeds:
-                  - url: https://selfh.st/rss/
-                    title: selfh.st
-                  - url: https://ciechanow.ski/atom.xml
-                  - url: https://www.joshwcomeau.com/rss.xml
-                    title: Josh Comeau
-                  - url: https://samwho.dev/rss.xml
-                  - url: https://ishadeed.com/feed.xml
-                    title: Ahmad Shadeed
+            - type: weather
+              location: New York, United States
+              units: imperial # alternatively "metric"
+              hour-format: 12h # alternatively "24h"
+              # Optionally hide the location from being displayed in the widget
+              # hide-location: true
 
             - type: twitch-channels
               channels:
@@ -55,25 +48,20 @@
                     show-thumbnails: true
       - size: small
         widgets:
-            - type: weather
-              location: New York, United States
-              units: imperial # alternatively "metric"
-              hour-format: 12h # alternatively "24h"
-              # Optionally hide the location from being displayed in the widget
-              # hide-location: true
-
             - type: markets
               markets:
-                  - symbol: SPY
-                    name: S&P 500
+                  - symbol: VOO
+                    name: Vanguard S&P 500 ETF
+                  - symbol: VTI
+                    name: Vanguard Total Stock Market ETF
+                  - symbol: QQQ 
+                    name: Invesco QQQ Trust
+                  - symbol: BRK-B
+                    name: Berkshire Hathaway
+                  - symbol: SCHB
+                    name: Schwab U.S. Broad Market ETF
                   - symbol: BTC-USD
                     name: Bitcoin
-                  - symbol: NVDA
-                    name: NVIDIA
-                  - symbol: AAPL
-                    name: Apple
-                  - symbol: MSFT
-                    name: Microsoft
 
             - type: releases
               cache: 1d
