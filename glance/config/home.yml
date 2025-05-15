@@ -51,17 +51,8 @@
                     subreddit: technology
                     show-thumbnails: true
                   - type: reddit
-                    subreddit: LEMMiNo
+                    subreddit: lemmino
                     show-thumbnails: true
-            # - type: portainer
-            #   url: /api
-            #   access-token: "ptr_E+5KFjcW2lri5uvRy4hD1hz6befNY/3FAyPU24G/ZLY="
-            #   endpoint-id: 1 # Adjust this depending on your environment
-            #   refresh: 60s
-            # - type: iframe
-            # url: https://192.168.68.147:9443
-            # height: 600px
-
       - size: small
         widgets:
             - type: weather
