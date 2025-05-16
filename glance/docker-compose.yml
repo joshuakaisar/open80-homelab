@@ -6,8 +6,12 @@ services:
         volumes:
             - /home/joshua-kaisar/homelab/open80-homelab/glance/config:/app/config
             - /home/joshua-kaisar/homelab/open80-homelab/glance/assets/:/app/assets
-            # Optionally, also mount docker socket if you want to use the docker containers widget
+            # Optionally, enable Docker containers widget
             # - /var/run/docker.sock:/var/run/docker.sock:ro
-        ports:
-            - 3000:8080
         env_file: .env
+        networks:
+            - nginxproxymanager_default # Connect to NPM's network
+
+networks:
+    nginxproxymanager_default:
+        external: true
