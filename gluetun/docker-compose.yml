@@ -11,8 +11,8 @@ services:
             - "8388:8388/tcp" # Optional: Shadowsocks
             - "8388:8388/udp" # Optional: Shadowsocks
             - "18000:8000" # Use 18000 on the host instead of 8000 for Widget
-        # volumes:
-        #     - /home/joshua-kaisar/homelab/open80-homelab/gluetun/data:/gluetun
+        volumes:
+            - /home/joshua-kaisar/homelab/open80-homelab/gluetun/data:/gluetun
         environment:
             - VPN_SERVICE_PROVIDER=surfshark
             - VPN_TYPE=wireguard
@@ -22,5 +22,5 @@ services:
             - SERVER_CITIES=New York
             - UPDATER_PERIOD=24h
             - GLUETUN_CONTROL_SERVER_ADDRESS=:8000
-            - GLUETUN_CONTROL_SERVER_USER=
-            - GLUETUN_CONTROL_SERVER_PASSWORD=
+            - GLUETUN_CONTROL_SERVER_USER=""
+            - GLUETUN_CONTROL_SERVER_PASSWORD=""
