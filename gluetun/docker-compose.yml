@@ -15,8 +15,7 @@ services:
             # - /home/joshua-kaisar/homelab/open80-homelab/gluetun
         environment:
             - VPN_SERVICE_PROVIDER=surfshark
-            - VPN_TYPE=openvpn
-            - OPENVPN_USER=${OPENVPN_USER}
-            - OPENVPN_PASSWORD=${OPENVPN_PASSWORD}
+            - VPN_TYPE=wireguard
+            - WIREGUARD_PRIVATE_KEY=${WIREGUARD_PRIVATE_KEY}
+            - WIREGUARD_ADDRESSES=${WIREGUARD_ADDRESSES}
             - TZ=${TZ}
-            - UPDATER_PERIOD=${UPDATER_PERIOD}
