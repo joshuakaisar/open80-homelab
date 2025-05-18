@@ -1,17 +1,15 @@
 services:
     gluetun:
-        image: qmcgaw/gluetun
+        image: qmcgaw/gluetun:latest
         container_name: gluetun
         cap_add:
             - NET_ADMIN
         devices:
             - /dev/net/tun:/dev/net/tun
         ports:
-            - "8888:8888/tcp" # Optional: HTTP proxy
-            - "8388:8388/tcp" # Optional: Shadowsocks
-            - "8388:8388/udp" # Optional: Shadowsocks
-            - "18000:8000" # Use 18000 on the host instead of 8000 for Widget
-            - "8080:8080" # forward host port 8080 to qbittorrent web UI inside network
+            - 8080:8080
+            - 6881:6881
+            - 6881:6881/udp
         volumes:
             - /home/joshua-kaisar/homelab/open80-homelab/qbittorrentVPN/gluetun/data:/gluetun
         environment:
