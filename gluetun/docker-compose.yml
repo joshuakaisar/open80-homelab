@@ -22,6 +22,4 @@ services:
             - SERVER_CITIES=New York
             - UPDATER_PERIOD=24h
             - GLUETUN_CONTROL_SERVER_ADDRESS=:8000
-            - GLUETUN_CONTROL_SERVER_USER=
-            - GLUETUN_CONTROL_SERVER_PASSWORD=
 
