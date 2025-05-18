@@ -19,7 +19,7 @@ services:
             - WIREGUARD_PRIVATE_KEY=${WIREGUARD_PRIVATE_KEY}
             - WIREGUARD_ADDRESSES=${WIREGUARD_ADDRESSES}
             - TZ=${TZ}
-            - SERVER_CITIES=New York
-            - UPDATER_PERIOD=24h
+            - SERVER_CITIES=${SERVER_CITIES}
+            - UPDATER_PERIOD=${UPDATER_PERIOD}
             - GLUETUN_CONTROL_SERVER_ADDRESS=:8000
 
