@@ -13,7 +13,7 @@ services:
             - "18000:8000" # Use 18000 on the host instead of 8000 for Widget
             - "4000:8080" # forward host port 4000 to qbittorrent web UI inside network
         volumes:
-            - /home/joshua-kaisar/homelab/open80-homelab/gluetun/data:/gluetun
+            - /home/joshua-kaisar/homelab/open80-homelab/qbittorrentVPN/gluetun/data:/gluetun
         environment:
             - VPN_SERVICE_PROVIDER=surfshark
             - VPN_TYPE=wireguard
@@ -23,3 +23,19 @@ services:
             - SERVER_CITIES=${SERVER_CITIES}
             - UPDATER_PERIOD=${UPDATER_PERIOD}
             - GLUETUN_CONTROL_SERVER_ADDRESS=:8000
+
+    qbittorrent:
+        image: lscr.io/linuxserver/qbittorrent:latest
+        container_name: qbittorrent
+        network_mode: "service:gluetun"
+        depends_on:
+            gluetun:
+                condition: service_healthy
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=${TZ}
+            - WEBUI_PORT=8080
+        volumes:
+            - /home/joshua-kaisar/homelab/open80-homelab/qbittorrentVPN/qbittorrent/config:/config
+            - /home/joshua-kaisar/homelab/open80-homelab/qbittorrentVPN/qbittorrent/data/turrents:/data/torrents
