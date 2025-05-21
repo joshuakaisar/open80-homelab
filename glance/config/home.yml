@@ -44,7 +44,8 @@
                     icon: si:radarr
                   - title: Prowlarr
                     url: ${PROWLARR_URL}
-                    icon: si:prowlarr
+                    check-url: ${PROWLARR_URL}ping
+                    icon: /assets/icons/prowlarr.png
                   - title: Sonarr
                     url: ${SONARR_URL}
                     icon: si:sonarr
