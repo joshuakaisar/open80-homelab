@@ -58,7 +58,7 @@
               title: Automation
               sites:
                   - title: qBittorrent
-                    url: ${QBITTORRENT_URL}
+                    url: ${qBittorrent_URL}
                     icon: si:qbittorrent
       - size: small
         widgets:
