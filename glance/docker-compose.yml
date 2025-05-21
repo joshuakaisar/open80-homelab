@@ -18,6 +18,8 @@ services:
             - READARR_URL=${READARR_URL}
             - GLUETUN_URL=${GLUETUN_URL}
             - GLUETUN_API_KEY=${GLUETUN_API_KEY}
+            - SPEEDTEST_URL=${SPEEDTEST_URL}
+            - SPEEDTEST_API_KEY=${SPEEDTEST_API_KEY}
         networks:
             - nginxproxymanager_default # Connect to NPM's network
 
