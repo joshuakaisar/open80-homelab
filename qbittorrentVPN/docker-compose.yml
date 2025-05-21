@@ -37,4 +37,4 @@ services:
             - WEBUI_PORT=8080
         volumes:
             - /home/joshua-kaisar/homelab/open80-homelab/qbittorrentVPN/qbittorrent/config:/config
-            - /home/joshua-kaisar/homelab/open80-homelab/qbittorrentVPN/qbittorrent/data/torrents:/data/torrents
+            - /home/joshua-kaisar/homelab/open80-homelab/arrStack/data/Downloads:/downloads
