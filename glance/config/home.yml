@@ -42,6 +42,9 @@
                   - title: Radarr
                     url: ${RADARR_URL}
                     icon: si:radarr
+                  - title: Prowlarr
+                    url: ${PROWLARR_URL}
+                    icon: si:prowlarr
                   - title: Sonarr
                     url: ${SONARR_URL}
                     icon: si:sonarr

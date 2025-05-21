@@ -12,6 +12,7 @@ services:
             - QBITTORRENT_URL=${QBITTORRENT_URL}
             - RADARR_URL=${RADARR_URL}
             - SONARR_URL=${SONARR_URL}
+            - PROWLARR_URL=${PROWLARR_URL}
         networks:
             - nginxproxymanager_default # Connect to NPM's network
 
