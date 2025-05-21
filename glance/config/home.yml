@@ -57,7 +57,7 @@
                     icon: /assets/icons/lidarr.png
                   - title: Readarr
                     url: ${READARR_URL}
-                    icon: si:readarr
+                    icon: /assets/icons/readarr.png
             - type: group
               widgets:
                   - type: hacker-news
