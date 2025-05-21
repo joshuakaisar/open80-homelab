@@ -48,6 +48,15 @@
                   - title: Sonarr
                     url: ${SONARR_URL}
                     icon: si:sonarr
+                  - title: Homarr
+                    url: ${HOMARR_URL}
+                    icon: si:homarr
+                  - title: Lidarr
+                    url: ${LIDARR_URL}
+                    icon: si:lidarr
+                  - title: Radarr
+                    url: ${RADARR_URL}
+                    icon: si:radarr
             - type: group
               widgets:
                   - type: hacker-news
