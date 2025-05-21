@@ -19,7 +19,7 @@ services:
             - GLUETUN_URL=${GLUETUN_URL}
             - GLUETUN_API_KEY=${GLUETUN_API_KEY}
             - SPEEDTEST_URL=${SPEEDTEST_URL}
-            - SPEEDTEST_API_KEY=${SPEEDTEST_API_KEY}
+            - SPEEDTEST_TRACKER_API_TOKEN=${SPEEDTEST_TRACKER_API_TOKEN}
         networks:
             - nginxproxymanager_default # Connect to NPM's network
 
