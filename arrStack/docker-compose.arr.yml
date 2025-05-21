@@ -17,8 +17,8 @@ services:
         ports:
             - 9696:9696
         restart: unless-stopped
-        env_file:
-            - ".env"
+        environment:
+            - ARRPATH=${ARRPATH}
 
     # ███████╗ ██████╗ ███╗   ██╗ █████╗ ██████╗ ██████╗
     # ██╔════╝██╔═══██╗████╗  ██║██╔══██╗██╔══██╗██╔══██╗
@@ -39,8 +39,8 @@ services:
         ports:
             - 8989:8989
         restart: unless-stopped
-        env_file:
-            - ".env"
+        environment:
+            - ARRPATH=${ARRPATH}
 
     # ██████╗  █████╗ ██████╗  █████╗ ██████╗ ██████╗
     # ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗
@@ -61,8 +61,8 @@ services:
         ports:
             - 7878:7878
         restart: unless-stopped
-        env_file:
-            - ".env"
+        environment:
+            - ARRPATH=${ARRPATH}
 
     # ██╗     ██╗██████╗  █████╗ ██████╗ ██████╗
     # ██║     ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗
@@ -82,8 +82,8 @@ services:
         ports:
             - 8686:8686
         restart: unless-stopped
-        env_file:
-            - ".env"
+        environment:
+            - ARRPATH=${ARRPATH}
 
     # ██████╗ ███████╗ █████╗ ██████╗  █████╗ ██████╗ ██████╗
     # ██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗
@@ -103,8 +103,8 @@ services:
         ports:
             - 8787:8787
         restart: unless-stopped
-        env_file:
-            - ".env"
+        environment:
+            - ARRPATH=${ARRPATH}
 
     # ██╗  ██╗ ██████╗ ███╗   ███╗ █████╗ ██████╗ ██████╗
     # ██║  ██║██╔═══██╗████╗ ████║██╔══██╗██╔══██╗██╔══██╗
@@ -123,5 +123,5 @@ services:
             - ${ARRPATH}Homarr/data:/data
         ports:
             - "7575:7575"
-        env_file:
-            - ".env"
+        environment:
+            - ARRPATH=${ARRPATH}
