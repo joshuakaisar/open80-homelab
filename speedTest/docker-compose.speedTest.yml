@@ -4,13 +4,12 @@ services:
         restart: unless-stopped
         container_name: speedtest-tracker
         ports:
-            - 8080:80
+            - 5050:80
             - 8443:443
         environment:
             - PUID=1000
             - PGID=1000
-            - APP_KEY=
+            - APP_KEY=vkabOS+izLDOvEygiWnJun7dNmWRPzmhyccCRqRCzqU=
             - DB_CONNECTION=sqlite
         volumes:
-            - /path/to/data:/config
-            - /path/to-custom-ssl-keys:/config/keys
+            - /home/joshua-kaisar/homelab/open80-homelab/speedTest/config:/config
