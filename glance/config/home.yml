@@ -39,12 +39,6 @@
                   - title: qBittorrent
                     url: ${qBittorrent_URL}
                     icon: si:qbittorrent
-                  - title: Radarr
-                    url: ${Radarr_URL}
-                    icon: si:radarr
-                  - title: Sonarr
-                    url: ${Sonarr_URL}
-                    icon: si:radarr
             - type: group
               widgets:
                   - type: hacker-news
