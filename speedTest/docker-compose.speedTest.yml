@@ -9,7 +9,7 @@ services:
         environment:
             - PUID=1000
             - PGID=1000
-            - APP_KEY=vkabOS+izLDOvEygiWnJun7dNmWRPzmhyccCRqRCzqU=
+            - APP_KEY=${APP_KEY}
             - DB_CONNECTION=sqlite
         volumes:
             - /home/joshua-kaisar/homelab/open80-homelab/speedTest/config:/config
