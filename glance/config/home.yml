@@ -32,6 +32,19 @@
               template: |
                   <p class="size-h2 color-highlight">{{ .JSON.String "random_verse.book" }} {{ .JSON.String "random_verse.chapter" }}:{{ .JSON.String "random_verse.verse" }}</p>
                   <p class="size-h4 color-paragraph">{{ .JSON.String "random_verse.text" }}</p>
+            - type: monitor
+              cache: 1m
+              title: Automation
+              sites:
+                  - title: qBittorrent
+                    url: ${qBittorrent_URL}
+                    icon: si:qbittorrent
+                  - title: Radarr
+                    url: ${Radarr_URL}
+                    icon: si:radarr
+                  - title: Sonarr
+                    url: ${Sonarr_URL}
+                    icon: si:radarr
             - type: group
               widgets:
                   - type: hacker-news
@@ -53,13 +66,6 @@
                   - type: reddit
                     subreddit: lemmino
                     show-thumbnails: true
-            - type: monitor
-              cache: 1m
-              title: Automation
-              sites:
-                  - title: qBittorrent
-                    url: ${QBITTORRENT_URL}
-                    icon: si:qbittorrent
       - size: small
         widgets:
             - type: markets
