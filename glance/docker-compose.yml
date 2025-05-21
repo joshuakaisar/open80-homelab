@@ -16,6 +16,8 @@ services:
             - HOMARR_URL=${HOMARR_URL}
             - LIDARR_URL=${LIDARR_URL}
             - READARR_URL=${READARR_URL}
+            - GLUETUN_URL=${GLUETUN_URL}
+            - GLUETUN_API_KEY=${GLUETUN_API_KEY}
         networks:
             - nginxproxymanager_default # Connect to NPM's network
 
