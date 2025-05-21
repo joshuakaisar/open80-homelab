@@ -60,6 +60,12 @@
                   - title: qBittorrent
                     url: ${QBITTORRENT_URL}
                     icon: si:qbittorrent
+                  - title: Radarr
+                    url: ${Radarr_URL}
+                    icon: si:radarr
+                  - title: Sonarr
+                    url: ${Sonarr_URL}
+                    icon: si:radarr
       - size: small
         widgets:
             - type: markets
