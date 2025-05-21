@@ -40,7 +40,7 @@
                     url: ${QBITTORRENT_URL}
                     icon: si:qbittorrent
                   - title: Radarr
-                    url: ${Radarr_URL}
+                    url: ${RADARR_URL}
                     icon: si:radarr
                   - title: Sonarr
                     url: ${Sonarr_URL}
