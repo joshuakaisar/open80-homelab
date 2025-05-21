@@ -15,7 +15,7 @@ services:
             - PROWLARR_URL=${PROWLARR_URL}
             - HOMARR_URL=${HOMARR_URL}
             - LIDARR_URL=${LIDARR_URL}
-            - RADARR_URL=${RADARR_URL}
+            - READARR_URL=${READARR_URL}
         networks:
             - nginxproxymanager_default # Connect to NPM's network
 

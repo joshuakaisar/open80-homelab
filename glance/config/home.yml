@@ -54,9 +54,9 @@
                   - title: Lidarr
                     url: ${LIDARR_URL}
                     icon: si:lidarr
-                  - title: Radarr
-                    url: ${RADARR_URL}
-                    icon: si:radarr
+                  - title: Readarr
+                    url: ${READARR_URL}
+                    icon: si:readarr
             - type: group
               widgets:
                   - type: hacker-news
