@@ -54,7 +54,7 @@
                     icon: si:homarr
                   - title: Lidarr
                     url: ${LIDARR_URL}
-                    icon: si:lidarr
+                    icon: /assets/icons/lidarr.png
                   - title: Readarr
                     url: ${READARR_URL}
                     icon: si:readarr
