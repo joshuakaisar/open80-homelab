@@ -41,6 +41,7 @@
                     icon: /assets/icons/qBittorrent.png
                   - title: Radarr
                     url: ${RADARR_URL}
+                    check-url: ${RADARR_URL}ping
                     icon: /assets/icons/radarr.png
                   - title: Prowlarr
                     url: ${PROWLARR_URL}
@@ -48,15 +49,19 @@
                     icon: /assets/icons/prowlarr.png
                   - title: Sonarr
                     url: ${SONARR_URL}
+                    check-url: ${SONARR_URL}ping
                     icon: /assets/icons/sonarr.png
                   - title: Homarr
                     url: ${HOMARR_URL}
+                    check-url: ${HOMARR_URL}ping
                     icon: /assets/icons/homarr.png
                   - title: Lidarr
                     url: ${LIDARR_URL}
+                    check-url: ${LIDARR_URL}ping
                     icon: /assets/icons/lidarr.png
                   - title: Readarr
                     url: ${READARR_URL}
+                    check-url: ${READARR_URL}ping
                     icon: /assets/icons/readarr.png
             - type: group
               widgets:
