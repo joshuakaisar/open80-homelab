@@ -1,3 +1,4 @@
+# https://www.reddit.com/r/selfhosted/comments/15oe631/gluetun_and_qbittorrent_correct_setup_in/
 services:
     gluetun:
         image: qmcgaw/gluetun:latest

@@ -1,0 +1,127 @@
+services:
+    # ██████╗ ██████╗  ██████╗ ██╗    ██╗██╗      █████╗ ██████╗ ██████╗
+    # ██╔══██╗██╔══██╗██╔═══██╗██║    ██║██║     ██╔══██╗██╔══██╗██╔══██╗
+    # ██████╔╝██████╔╝██║   ██║██║ █╗ ██║██║     ███████║██████╔╝██████╔╝
+    # ██╔═══╝ ██╔══██╗██║   ██║██║███╗██║██║     ██╔══██║██╔══██╗██╔══██╗
+    # ██║     ██║  ██║╚██████╔╝╚███╔███╔╝███████╗██║  ██║██║  ██║██║  ██║
+    # ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═
+
+    prowlarr:
+        image: linuxserver/prowlarr:latest
+        container_name: prowlarr
+        hostname: prowlarr
+        volumes:
+            - ${ARRPATH}Prowlarr/config:/config
+            - ${ARRPATH}Prowlarr/backup:/data/Backup
+            - ${ARRPATH}Downloads:/downloads
+        ports:
+            - 9696:9696
+        restart: unless-stopped
+        env_file:
+            - ".env"
+
+    # ███████╗ ██████╗ ███╗   ██╗ █████╗ ██████╗ ██████╗
+    # ██╔════╝██╔═══██╗████╗  ██║██╔══██╗██╔══██╗██╔══██╗
+    # ███████╗██║   ██║██╔██╗ ██║███████║██████╔╝██████╔╝
+    # ╚════██║██║   ██║██║╚██╗██║██╔══██║██╔══██╗██╔══██╗
+    # ███████║╚██████╔╝██║ ╚████║██║  ██║██║  ██║██║  ██║
+    # ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
+
+    sonarr:
+        image: linuxserver/sonarr:latest
+        container_name: sonarr
+        hostname: sonarr
+        volumes:
+            - ${ARRPATH}Sonarr/config:/config
+            - ${ARRPATH}Sonarr/backup:/data/Backup
+            - ${ARRPATH}Sonarr/tvshows:/data/tvshows
+            - ${ARRPATH}Downloads:/downloads
+        ports:
+            - 8989:8989
+        restart: unless-stopped
+        env_file:
+            - ".env"
+
+    # ██████╗  █████╗ ██████╗  █████╗ ██████╗ ██████╗
+    # ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗
+    # ██████╔╝███████║██║  ██║███████║██████╔╝██████╔╝
+    # ██╔══██╗██╔══██║██║  ██║██╔══██║██╔══██╗██╔══██╗
+    # ██║  ██║██║  ██║██████╔╝██║  ██║██║  ██║██║  ██║
+    # ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
+
+    radarr:
+        image: linuxserver/radarr:latest
+        container_name: radarr
+        hostname: radarr
+        volumes:
+            - ${ARRPATH}Radarr/config:/config
+            - ${ARRPATH}Radarr/movies:/data/movies
+            - ${ARRPATH}Radarr/backup:/data/Backup
+            - ${ARRPATH}Downloads:/downloads
+        ports:
+            - 7878:7878
+        restart: unless-stopped
+        env_file:
+            - ".env"
+
+    # ██╗     ██╗██████╗  █████╗ ██████╗ ██████╗
+    # ██║     ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗
+    # ██║     ██║██║  ██║███████║██████╔╝██████╔╝
+    # ██║     ██║██║  ██║██╔══██║██╔══██╗██╔══██╗
+    # ███████╗██║██████╔╝██║  ██║██║  ██║██║  ██║
+    # ╚══════╝╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
+
+    lidarr:
+        image: linuxserver/lidarr:latest
+        container_name: lidarr
+        hostname: lidarr
+        volumes:
+            - ${ARRPATH}Lidarr/config:/config
+            - ${ARRPATH}Lidarr/music:/data/musicfolder
+            - ${ARRPATH}Downloads:/downloads
+        ports:
+            - 8686:8686
+        restart: unless-stopped
+        env_file:
+            - ".env"
+
+    # ██████╗ ███████╗ █████╗ ██████╗  █████╗ ██████╗ ██████╗
+    # ██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗
+    # ██████╔╝█████╗  ███████║██║  ██║███████║██████╔╝██████╔╝
+    # ██╔══██╗██╔══╝  ██╔══██║██║  ██║██╔══██║██╔══██╗██╔══██╗
+    # ██║  ██║███████╗██║  ██║██████╔╝██║  ██║██║  ██║██║  ██║
+    # ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
+
+    readarr:
+        image: linuxserver/readarr:develop
+        container_name: readarr
+        hostname: readarr
+        volumes:
+            - ${ARRPATH}Readarr/config:/config
+            - ${ARRPATH}Readarr/books:/data/books
+            - ${ARRPATH}Downloads:/downloads
+        ports:
+            - 8787:8787
+        restart: unless-stopped
+        env_file:
+            - ".env"
+
+    # ██╗  ██╗ ██████╗ ███╗   ███╗ █████╗ ██████╗ ██████╗
+    # ██║  ██║██╔═══██╗████╗ ████║██╔══██╗██╔══██╗██╔══██╗
+    # ███████║██║   ██║██╔████╔██║███████║██████╔╝██████╔╝
+    # ██╔══██║██║   ██║██║╚██╔╝██║██╔══██║██╔══██╗██╔══██╗
+    # ██║  ██║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██║
+    # ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
+
+    homarr:
+        container_name: homarr
+        image: ghcr.io/ajnart/homarr:latest
+        restart: unless-stopped
+        volumes:
+            - ${ARRPATH}Homarr/configs:/app/data/configs
+            - ${ARRPATH}Homarr/icons:/app/public/icons
+            - ${ARRPATH}Homarr/data:/data
+        ports:
+            - "7575:7575"
+        env_file:
+            - ".env"
