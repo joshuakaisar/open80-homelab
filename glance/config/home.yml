@@ -38,20 +38,20 @@
               sites:
                   - title: qBittorrent
                     url: ${QBITTORRENT_URL}
-                    icon: si:qbittorrent
+                    icon: /assets/icons/qBittorrent.png
                   - title: Radarr
                     url: ${RADARR_URL}
-                    icon: si:radarr
+                    icon: /assets/icons/radarr.png
                   - title: Prowlarr
                     url: ${PROWLARR_URL}
                     check-url: ${PROWLARR_URL}ping
                     icon: /assets/icons/prowlarr.png
                   - title: Sonarr
                     url: ${SONARR_URL}
-                    icon: si:sonarr
+                    icon: /assets/icons/sonarr.png
                   - title: Homarr
                     url: ${HOMARR_URL}
-                    icon: si:homarr
+                    icon: /assets/icons/homarr.png
                   - title: Lidarr
                     url: ${LIDARR_URL}
                     icon: /assets/icons/lidarr.png
