@@ -53,6 +53,13 @@
                   - type: reddit
                     subreddit: lemmino
                     show-thumbnails: true
+            - type: monitor
+              cache: 1m
+              title: Automation
+              sites:
+                  - title: qBittorrent
+                    url: ${QBITTORRENT_URL}
+                    icon: si:qbittorrent
       - size: small
         widgets:
             # - type: custom-api

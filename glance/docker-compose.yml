@@ -8,7 +8,8 @@ services:
             - /home/joshua-kaisar/homelab/open80-homelab/glance/assets/:/app/assets
             # Optionally, enable Docker containers widget
             # - /var/run/docker.sock:/var/run/docker.sock:ro
-        env_file: .env
+        environment:
+            - QBITTORRENT_URL=${QBITTORRENT_URL}
         networks:
             - nginxproxymanager_default # Connect to NPM's network
 
