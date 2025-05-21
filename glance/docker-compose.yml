@@ -10,7 +10,7 @@ services:
             # - /var/run/docker.sock:/var/run/docker.sock:ro
         environment:
             - QBITTORRENT_URL=${QBITTORRENT_URL}
-            - Radarr_URL=${Radarr_URL}
+            - RADARR_URL=${RADARR_URL}
             - Sonarr_URL=${Sonarr_URL}
         networks:
             - nginxproxymanager_default # Connect to NPM's network
