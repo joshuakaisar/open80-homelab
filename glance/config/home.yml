@@ -43,7 +43,7 @@
                     url: ${RADARR_URL}
                     icon: si:radarr
                   - title: Sonarr
-                    url: ${Sonarr_URL}
+                    url: ${SONARR_URL}
                     icon: si:sonarr
             - type: group
               widgets:
