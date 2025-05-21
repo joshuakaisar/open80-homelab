@@ -34,7 +34,7 @@
                   <p class="size-h4 color-paragraph">{{ .JSON.String "random_verse.text" }}</p>
             - type: monitor
               cache: 1m
-              title: Automation
+              title: Service Status
               sites:
                   - title: qBittorrent
                     url: ${QBITTORRENT_URL}
