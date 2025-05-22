@@ -30,7 +30,7 @@ services:
       - 8080:8080 #qbittorrent
       - 6881:6881 #qbittorrent
       - 6881:6881/udp #qbittorrent
-      - 8000:8000 #gluetun control server
+      - 4040:8000 #gluetun control server
     cap_add:
       - NET_ADMIN
     devices:
