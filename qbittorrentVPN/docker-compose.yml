@@ -41,3 +41,8 @@ services:
             - /home/joshua-kaisar/homelab/open80-homelab/qbittorrentVPN/qbittorrent/config:/config
             - /home/joshua-kaisar/homelab/open80-homelab/arrStack/data/Downloads:/downloads
         restart: unless-stopped
+        networks:
+            - nginxproxymanager_default # Connect to NPM's network
+networks:
+    nginxproxymanager_default:
+        external: true
