@@ -7,8 +7,8 @@ services:
             - "7359:7359/udp" # Network discovery
             - "1900:1900/udp" # DLNA port
         volumes:
-            - /path/to/config:/config
-            - /path/to/cache:/cache
+            - /home/joshua-kaisar/homelab/open80-homelab/jellyfin/config:/config
+            - /home/joshua-kaisar/homelab/open80-homelab/jellyfin/cache:/cache
             - type: bind
               source: /mnt/nas/Movies
               target: /media/movies
