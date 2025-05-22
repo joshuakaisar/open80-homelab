@@ -25,7 +25,7 @@ services:
             - TZ=${TZ}
             - SERVER_CITIES=${SERVER_CITIES}
             - UPDATER_PERIOD=${UPDATER_PERIOD}
-            - GLUETUN_CONTROL_SERVER_ADDRESS=:8000
+            # - GLUETUN_CONTROL_SERVER_ADDRESS=:8000
 
     qbittorrent:
         image: lscr.io/linuxserver/qbittorrent:latest
