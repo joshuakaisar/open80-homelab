@@ -11,7 +11,7 @@ services:
             - PGID=1000
             - APP_KEY=${APP_KEY}
             - SPEEDTEST_SCHEDULED=${SPEEDTEST_SCHEDULED}
-            - APP_DEBUG=true
+            - APP_DEBUG=${APP_DEBUG}
             - DB_CONNECTION=sqlite
         volumes:
             - /home/joshua-kaisar/homelab/open80-homelab/speedTest/config:/config
