@@ -1,7 +1,22 @@
 # https://www.reddit.com/r/selfhosted/comments/15oe631/gluetun_and_qbittorrent_correct_setup_in/
 services:
+    qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    network_mode: "service:gluetun"
+    environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=${TZ}
+        - WEBUI_PORT=8080
+        - TORRENTING_PORT=6881
+    volumes:
+        - /home/joshua-kaisar/homelab/open80-homelab/qbittorrentVPN/qbittorrent/config:/config
+        - /home/joshua-kaisar/homelab/open80-homelab/arrStack/data/Downloads:/downloads
+    restart: unless-stopped
+
     gluetun:
-        image: qmcgaw/gluetun:latest
+        image: qmcgaw/gluetun
         container_name: gluetun
         ports:
             # - 9696:9696 #prowlarr
@@ -26,18 +41,3 @@ services:
             - SERVER_CITIES=${SERVER_CITIES}
             - UPDATER_PERIOD=${UPDATER_PERIOD}
             # - GLUETUN_CONTROL_SERVER_ADDRESS=:8000
-
-    qbittorrent:
-        image: lscr.io/linuxserver/qbittorrent:latest
-        container_name: qbittorrent
-        network_mode: "service:gluetun"
-        environment:
-            - PUID=1000
-            - PGID=1000
-            - TZ=${TZ}
-            - WEBUI_PORT=8080
-            - TORRENTING_PORT=6881
-        volumes:
-            - /home/joshua-kaisar/homelab/open80-homelab/qbittorrentVPN/qbittorrent/config:/config
-            - /home/joshua-kaisar/homelab/open80-homelab/arrStack/data/Downloads:/downloads
-        restart: unless-stopped
