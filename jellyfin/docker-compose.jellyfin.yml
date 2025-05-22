@@ -19,3 +19,8 @@ services:
         environment:
             - ARRPATH=${ARRPATH}
         restart: "unless-stopped"
+        networks:
+            - nginxproxymanager_default # Connect to NPM's network
+networks:
+    nginxproxymanager_default:
+        external: true
