@@ -63,6 +63,10 @@
                     url: ${READARR_URL}
                     check-url: ${READARR_URL}ping
                     icon: /assets/icons/readarr.png
+                  - title: Jellyfin
+                    url: ${JELLYFIN_URL}
+                    check-url: ${JELLYFIN_URL}ping
+                    icon: /assets/icons/jellyfin.svg
             - type: group
               widgets:
                   - type: hacker-news
