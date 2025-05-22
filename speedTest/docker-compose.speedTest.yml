@@ -10,7 +10,6 @@ services:
             - PUID=1000
             - PGID=1000
             - APP_KEY=${APP_KEY}
-            - APP_URL=${APP_URL}
             - SPEEDTEST_SCHEDULED=0 */6 * * *
             - DB_CONNECTION=sqlite
         volumes:
