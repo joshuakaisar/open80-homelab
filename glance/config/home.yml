@@ -65,7 +65,6 @@
                     icon: /assets/icons/readarr.png
                   - title: Jellyfin
                     url: ${JELLYFIN_URL}
-                    # check-url: ${JELLYFIN_URL}ping
                     icon: /assets/icons/jellyfin.svg
             - type: group
               widgets:
