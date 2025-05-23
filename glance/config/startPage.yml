@@ -1,12 +1,11 @@
 - name: Startpage
-  # width: slim
   hide-desktop-navigation: false
   center-vertically: true
   columns:
       - size: small
         widgets:
             - type: repository
-              repository: TechHutTV/homelab
+              repository: joshuakaisar/open80-homelab
               pull-requests-limit: 5
               issues-limit: 3
               commits-limit: 3
