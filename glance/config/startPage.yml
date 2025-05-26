@@ -205,4 +205,4 @@
                   - title: Jellyseerr
                     url: ${JELLYSEERR_URL}
                     check-url: ${JELLYSEERR_URL}ping
-                    icon: /assets/icons/jellyseerr.svg
+                    icon: /assets/icons/jellyseerr.png
