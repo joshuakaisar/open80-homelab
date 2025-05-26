@@ -8,13 +8,12 @@ services:
         - PUID=1000
         - PGID=1000
         - TZ=${TZ}
+        - ARRPATH=${ARRPATH}
         volumes:
             - ${ARRPATH}Prowlarr/config:/config
             - ${ARRPATH}Prowlarr/backup:/data/Backup
             - ${ARRPATH}Downloads:/downloads
-        restart: unless-stopped
-        environment:
-            - ARRPATH=${ARRPATH}
+        restart: unless-stopped          
 
     sonarr:
         image: linuxserver/sonarr:latest
