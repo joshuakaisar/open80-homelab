@@ -13,3 +13,9 @@ services:
         volumes:
             - ${APPPATH}jellyseerr/config:/app/config
         restart: unless-stopped
+        networks:
+            - nginxproxymanager_default # Connect to NPM's network
+
+networks:
+    nginxproxymanager_default:
+        external: true
