@@ -1,9 +1,13 @@
 # https://www.reddit.com/r/selfhosted/comments/15oe631/gluetun_and_qbittorrent_correct_setup_in/
 services:
     prowlarr:
-        image: linuxserver/prowlarr:latest
+        image: lscr.io/linuxserver/prowlarr:latest
         container_name: prowlarr
-        hostname: prowlarr
+        network_mode: "service:gluetun"
+        environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=${TZ}
         volumes:
             - ${ARRPATH}Prowlarr/config:/config
             - ${ARRPATH}Prowlarr/backup:/data/Backup
