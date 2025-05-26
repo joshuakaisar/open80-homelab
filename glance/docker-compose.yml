@@ -21,6 +21,7 @@ services:
             - SPEEDTEST_URL=${SPEEDTEST_URL}
             - SPEEDTEST_TRACKER_API_TOKEN=${SPEEDTEST_TRACKER_API_TOKEN}
             - JELLYFIN_URL=${JELLYFIN_URL}
+            - JELLYSEERR_URL=${JELLYSEERR_URL}
         networks:
             - nginxproxymanager_default # Connect to NPM's network
 
