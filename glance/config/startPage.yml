@@ -202,3 +202,7 @@
                   - title: Jellyfin
                     url: ${JELLYFIN_URL}
                     icon: /assets/icons/jellyfin.svg
+                  - title: Jellyseerr
+                    url: ${JELLYSEERR_URL}
+                    check-url: ${JELLYSEERR_URL}ping
+                    icon: /assets/icons/jellyseerr.svg
