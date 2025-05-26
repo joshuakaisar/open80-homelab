@@ -5,25 +5,25 @@ services:
         container_name: prowlarr
         network_mode: "service:gluetun"
         environment:
-        - PUID=1000
-        - PGID=1000
-        - TZ=${TZ}
-        - ARRPATH=${ARRPATH}
+            - PUID=1000
+            - PGID=1000
+            - TZ=${TZ}
+            - ARRPATH=${ARRPATH}
         volumes:
             - ${ARRPATH}Prowlarr/config:/config
             - ${ARRPATH}Prowlarr/backup:/data/Backup
             - ${ARRPATH}Downloads:/downloads
-        restart: unless-stopped          
+        restart: unless-stopped
 
     sonarr:
         image: lscr.io/linuxserver/sonarr:latest
         container_name: sonarr
         network_mode: "service:gluetun"
         environment:
-        - PUID=1000
-        - PGID=1000
-        - TZ=${TZ}
-        - ARRPATH=${ARRPATH}
+            - PUID=1000
+            - PGID=1000
+            - TZ=${TZ}
+            - ARRPATH=${ARRPATH}
         volumes:
             - ${ARRPATH}Sonarr/config:/config
             - ${ARRPATH}Sonarr/backup:/data/Backup
