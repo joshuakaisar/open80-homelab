@@ -1,0 +1,134 @@
+# https://www.reddit.com/r/selfhosted/comments/15oe631/gluetun_and_qbittorrent_correct_setup_in/
+services:
+    prowlarr:
+        image: linuxserver/prowlarr:latest
+        container_name: prowlarr
+        hostname: prowlarr
+        volumes:
+            - ${ARRPATH}Prowlarr/config:/config
+            - ${ARRPATH}Prowlarr/backup:/data/Backup
+            - ${ARRPATH}Downloads:/downloads
+        restart: unless-stopped
+        environment:
+            - ARRPATH=${ARRPATH}
+
+    sonarr:
+        image: linuxserver/sonarr:latest
+        container_name: sonarr
+        hostname: sonarr
+        volumes:
+            - ${ARRPATH}Sonarr/config:/config
+            - ${ARRPATH}Sonarr/backup:/data/Backup
+            - ${ARRPATH}Sonarr/tvshows:/data/tvshows
+            - ${ARRPATH}Downloads:/downloads
+        restart: unless-stopped
+        environment:
+            - ARRPATH=${ARRPATH}
+
+    radarr:
+        image: linuxserver/radarr:latest
+        container_name: radarr
+        hostname: radarr
+        volumes:
+            - ${ARRPATH}Radarr/config:/config
+            - ${ARRPATH}Radarr/movies:/data/movies
+            - ${ARRPATH}Radarr/backup:/data/Backup
+            - ${ARRPATH}Downloads:/downloads
+        restart: unless-stopped
+        environment:
+            - ARRPATH=${ARRPATH}
+
+    lidarr:
+        image: linuxserver/lidarr:latest
+        container_name: lidarr
+        hostname: lidarr
+        volumes:
+            - ${ARRPATH}Lidarr/config:/config
+            - ${ARRPATH}Lidarr/music:/data/musicfolder
+            - ${ARRPATH}Downloads:/downloads
+        restart: unless-stopped
+        environment:
+            - ARRPATH=${ARRPATH}
+
+    readarr:
+        image: linuxserver/readarr:develop
+        container_name: readarr
+        hostname: readarr
+        volumes:
+            - ${ARRPATH}Readarr/config:/config
+            - ${ARRPATH}Readarr/books:/data/books
+            - ${ARRPATH}Downloads:/downloads
+        restart: unless-stopped
+        environment:
+            - ARRPATH=${ARRPATH}
+
+    homarr:
+        container_name: homarr
+        image: ghcr.io/ajnart/homarr:latest
+        restart: unless-stopped
+        volumes:
+            - ${ARRPATH}Homarr/configs:/app/data/configs
+            - ${ARRPATH}Homarr/icons:/app/public/icons
+            - ${ARRPATH}Homarr/data:/data
+        environment:
+            - ARRPATH=${ARRPATH}
+
+    bazarr:
+        image: lscr.io/linuxserver/bazarr:latest
+        container_name: bazarr
+        network_mode: "service:gluetun"
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=${TZ}
+        volumes:
+            - /media/arr/bazarr/config:/config
+            - /media/arr/radarr/movies:/movies #optional
+            - /media/arr/sonarr/tvseries:/tv #optional
+        restart: unless-stopped
+
+    qbittorrent:
+        image: lscr.io/linuxserver/qbittorrent:latest
+        container_name: qbittorrent
+        network_mode: "service:gluetun"
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=${TZ}
+            - WEBUI_PORT=8080
+            - TORRENTING_PORT=6881
+        volumes:
+            - /home/joshua-kaisar/homelab/open80-homelab/qbittorrentVPN/qbittorrent/config:/config
+            - /home/joshua-kaisar/homelab/open80-homelab/arrStack/data/Downloads:/downloads
+        depends_on:
+            - gluetun
+        restart: unless-stopped
+
+    gluetun:
+        image: qmcgaw/gluetun
+        container_name: gluetun
+        ports:
+            - 9696:9696 #prowlarr
+            - 7878:7878 #radarr
+            - 8989:8989 #sonarr
+            - 6767:6767 #bazarr
+            - 8686:8686 #lidarr
+            - 8787:8787 #readarr
+            - 7575:7575 #homarr
+            - 8080:8080 #qbittorrent
+            - 6881:6881 #qbittorrent
+            - 6881:6881/udp #qbittorrent
+            - 4040:8000 #gluetun control server
+        cap_add:
+            - NET_ADMIN
+        devices:
+            - /dev/net/tun:/dev/net/tun
+        environment:
+            - VPN_SERVICE_PROVIDER=surfshark
+            - VPN_TYPE=wireguard
+            - WIREGUARD_PRIVATE_KEY=${WIREGUARD_PRIVATE_KEY}
+            - WIREGUARD_ADDRESSES=${WIREGUARD_ADDRESSES}
+            - TZ=${TZ}
+            - SERVER_CITIES=${SERVER_CITIES}
+            - UPDATER_PERIOD=12h
+            # - GLUETUN_CONTROL_SERVER_ADDRESS=:8000
