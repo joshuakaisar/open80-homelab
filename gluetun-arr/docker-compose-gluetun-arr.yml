@@ -22,6 +22,7 @@ services:
         environment:
         - PUID=1000
         - PGID=1000
+        - TZ=${TZ}
         - ARRPATH=${ARRPATH}
         volumes:
             - ${ARRPATH}Sonarr/config:/config
