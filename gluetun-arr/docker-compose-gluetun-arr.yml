@@ -37,7 +37,7 @@ services:
             - ${ARRPATH}Sonarr/backup:/data/Backup
             - ${ARRPATH}Sonarr/tvshows:/data/tvshows
             - ${ARRPATH}Downloads:/downloads
-            - /mnt/nas/Shows
+            - /mnt/nas/Media:/data/tvshows
         restart: unless-stopped
 
     radarr:
