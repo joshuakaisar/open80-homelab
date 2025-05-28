@@ -183,10 +183,6 @@
                     url: ${PROWLARR_URL}
                     check-url: ${PROWLARR_URL}ping
                     icon: /assets/icons/prowlarr.png
-                  - title: FlareSolverr
-                    url: ${FLARESOLVERR_URL}
-                    check-url: ${FLARESOLVERR_URL}ping
-                    icon: /assets/icons/flaresolverr.png
                   - title: Sonarr
                     url: ${SONARR_URL}
                     check-url: ${SONARR_URL}ping
