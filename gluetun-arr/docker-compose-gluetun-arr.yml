@@ -35,8 +35,7 @@ services:
         volumes:
             - ${ARRPATH}Sonarr/config:/config
             - ${ARRPATH}Sonarr/backup:/data/Backup
-            - ${ARRPATH}Sonarr/tvshows:/data/tvshows
-            - ${ARRPATH}Downloads:/downloads
+            - ${ARRPATH}Downloads:/downloads                   # Shared download path
             - /mnt/nas/Media:/mnt/nas/Media    
         restart: unless-stopped
 
@@ -115,9 +114,10 @@ services:
             - TZ=${TZ}
             - WEBUI_PORT=8080
             - TORRENTING_PORT=6881
+            - ARRPATH=${ARRPATH}
         volumes:
-            - /home/joshua-kaisar/homelab/open80-homelab/qbittorrentVPN/qbittorrent/config:/config
-            - /home/joshua-kaisar/homelab/open80-homelab/arrStack/data/Downloads:/downloads
+            - ${ARRPATH}qbittorrent/config:/config
+            - ${ARRPATH}Downloads:/downloads
         depends_on:
             - gluetun
         restart: unless-stopped
