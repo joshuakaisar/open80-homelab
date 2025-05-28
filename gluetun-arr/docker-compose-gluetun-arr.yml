@@ -35,8 +35,8 @@ services:
         volumes:
             - ${ARRPATH}Sonarr/config:/config
             - ${ARRPATH}Sonarr/backup:/data/Backup
-            - ${ARRPATH}Downloads:/downloads                   # Shared download path
-            - /mnt/nas/Media:/mnt/nas/Media    
+            - ${ARRPATH}Downloads:/downloads # Shared download path
+            - /mnt/nas/Media:/mnt/nas/Media
         restart: unless-stopped
 
     radarr:
@@ -50,9 +50,9 @@ services:
             - ARRPATH=${ARRPATH}
         volumes:
             - ${ARRPATH}Radarr/config:/config
-            - ${ARRPATH}Radarr/movies:/data/movies
             - ${ARRPATH}Radarr/backup:/data/Backup
-            - ${ARRPATH}Downloads:/downloads
+            - ${ARRPATH}Downloads:/downloads # Shared download path
+            - /mnt/nas/Media:/mnt/nas/Media
         restart: unless-stopped
 
     lidarr:
