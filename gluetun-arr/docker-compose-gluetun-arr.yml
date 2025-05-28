@@ -40,17 +40,20 @@ services:
         restart: unless-stopped
 
     radarr:
-        image: linuxserver/radarr:latest
+        image: lscr.io/linuxserver/radarr:latest
         container_name: radarr
-        hostname: radarr
+        network_mode: "service:gluetun"
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=${TZ}
+            - ARRPATH=${ARRPATH}
         volumes:
             - ${ARRPATH}Radarr/config:/config
             - ${ARRPATH}Radarr/movies:/data/movies
             - ${ARRPATH}Radarr/backup:/data/Backup
             - ${ARRPATH}Downloads:/downloads
         restart: unless-stopped
-        environment:
-            - ARRPATH=${ARRPATH}
 
     lidarr:
         image: linuxserver/lidarr:latest
