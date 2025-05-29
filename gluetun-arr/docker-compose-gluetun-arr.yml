@@ -56,39 +56,45 @@ services:
         restart: unless-stopped
 
     lidarr:
-        image: linuxserver/lidarr:latest
+        image: lscr.io/linuxserver/lidarr:latest
         container_name: lidarr
-        hostname: lidarr
+        network_mode: "service:gluetun"
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=${TZ}
+            - ARRPATH=${ARRPATH}
         volumes:
             - ${ARRPATH}Lidarr/config:/config
             - ${ARRPATH}Lidarr/music:/data/musicfolder
             - ${ARRPATH}Downloads:/downloads
         restart: unless-stopped
-        environment:
-            - ARRPATH=${ARRPATH}
 
     readarr:
-        image: linuxserver/readarr:develop
+        image: lscr.io/linuxserver/readarr:develop
         container_name: readarr
-        hostname: readarr
+        network_mode: "service:gluetun"
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=${TZ}
+            - ARRPATH=${ARRPATH}
         volumes:
             - ${ARRPATH}Readarr/config:/config
             - ${ARRPATH}Readarr/books:/data/books
             - ${ARRPATH}Downloads:/downloads
         restart: unless-stopped
-        environment:
-            - ARRPATH=${ARRPATH}
 
-    homarr:
-        container_name: homarr
-        image: ghcr.io/ajnart/homarr:latest
-        restart: unless-stopped
-        volumes:
-            - ${ARRPATH}Homarr/configs:/app/data/configs
-            - ${ARRPATH}Homarr/icons:/app/public/icons
-            - ${ARRPATH}Homarr/data:/data
-        environment:
-            - ARRPATH=${ARRPATH}
+    # homarr:
+    #     container_name: homarr
+    #     image: ghcr.io/ajnart/homarr:latest
+    #     restart: unless-stopped
+    #     volumes:
+    #         - ${ARRPATH}Homarr/configs:/app/data/configs
+    #         - ${ARRPATH}Homarr/icons:/app/public/icons
+    #         - ${ARRPATH}Homarr/data:/data
+    #     environment:
+    #         - ARRPATH=${ARRPATH}
 
     bazarr:
         image: lscr.io/linuxserver/bazarr:latest
@@ -133,7 +139,7 @@ services:
             - 6767:6767 #bazarr
             - 8686:8686 #lidarr
             - 8787:8787 #readarr
-            - 7575:7575 #homarr
+            # - 7575:7575 #homarr
             - 8080:8080 #qbittorrent
             - 6881:6881 #qbittorrent
             - 6881:6881/udp #qbittorrent

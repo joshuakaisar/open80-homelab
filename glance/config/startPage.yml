@@ -207,10 +207,10 @@
                     url: ${BAZARR_URL}
                     check-url: ${BAZARR_URL}ping
                     icon: /assets/icons/bazarr.png
-                  - title: Homarr
-                    url: ${HOMARR_URL}
-                    check-url: ${HOMARR_URL}ping
-                    icon: /assets/icons/homarr.png
+                  # - title: Homarr
+                  #   url: ${HOMARR_URL}
+                  #   check-url: ${HOMARR_URL}ping
+                  #   icon: /assets/icons/homarr.png
                   - title: Lidarr
                     url: ${LIDARR_URL}
                     check-url: ${LIDARR_URL}ping
