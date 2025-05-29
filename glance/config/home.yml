@@ -1,4 +1,7 @@
 - name: Home
+  width: slim
+  hide-desktop-navigation: false
+  center-vertically: true
   columns:
       - size: small
         widgets:
@@ -11,6 +14,32 @@
               hour-format: 12h # alternatively "24h"
               # Optionally hide the location from being displayed in the widget
               # hide-location: true
+
+            - type: markets
+              markets:
+                  - symbol: VOO
+                    name: Vanguard S&P 500 ETF
+                  - symbol: VTI
+                    name: Vanguard Total Stock Market ETF
+                  - symbol: QQQ
+                    name: Invesco QQQ Trust
+                  - symbol: BRK-B
+                    name: Berkshire Hathaway
+                  - symbol: SCHB
+                    name: Schwab U.S. Broad Market ETF
+                  - symbol: BTC-USD
+                    name: Bitcoin
+
+            - type: releases
+              cache: 1d
+              # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+              # read-only token from your Github account settings and use it here to increase the limit.
+              # token: ...
+              repositories:
+                  - glanceapp/glance
+                  - go-gitea/gitea
+                  - immich-app/immich
+                  - syncthing/syncthing
 
             - type: twitch-channels
               channels:
@@ -51,30 +80,3 @@
                   - type: reddit
                     subreddit: lemmino
                     show-thumbnails: true
-      - size: small
-        widgets:
-            - type: markets
-              markets:
-                  - symbol: VOO
-                    name: Vanguard S&P 500 ETF
-                  - symbol: VTI
-                    name: Vanguard Total Stock Market ETF
-                  - symbol: QQQ
-                    name: Invesco QQQ Trust
-                  - symbol: BRK-B
-                    name: Berkshire Hathaway
-                  - symbol: SCHB
-                    name: Schwab U.S. Broad Market ETF
-                  - symbol: BTC-USD
-                    name: Bitcoin
-
-            - type: releases
-              cache: 1d
-              # Without authentication the Github API allows for up to 60 requests per hour. You can create a
-              # read-only token from your Github account settings and use it here to increase the limit.
-              # token: ...
-              repositories:
-                  - glanceapp/glance
-                  - go-gitea/gitea
-                  - immich-app/immich
-                  - syncthing/syncthing
