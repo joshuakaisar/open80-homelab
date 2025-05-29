@@ -187,6 +187,10 @@
                     url: ${SONARR_URL}
                     check-url: ${SONARR_URL}ping
                     icon: /assets/icons/sonarr.png
+                  - title: Bazarr
+                    url: ${BAZARR_URL}
+                    check-url: ${BAZARR_URL}ping
+                    icon: /assets/icons/bazarr.png
                   - title: Homarr
                     url: ${HOMARR_URL}
                     check-url: ${HOMARR_URL}ping

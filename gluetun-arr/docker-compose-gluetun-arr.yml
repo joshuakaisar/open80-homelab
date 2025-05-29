@@ -100,8 +100,8 @@ services:
             - TZ=${TZ}
         volumes:
             - /media/arr/bazarr/config:/config
-            - /media/arr/radarr/movies:/movies #optional
-            - /media/arr/sonarr/tvseries:/tv #optional
+            - ${ARRPATH}Downloads:/downloads # Shared download path
+            - /mnt/nas/Media:/mnt/nas/Media
         restart: unless-stopped
 
     qbittorrent:
