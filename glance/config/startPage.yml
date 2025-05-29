@@ -183,6 +183,21 @@
                     url: ${RADARR_URL}
                     check-url: ${RADARR_URL}ping
                     icon: /assets/icons/radarr.png
+                  - title: Jellyfin
+                    url: ${JELLYFIN_URL}
+                    icon: /assets/icons/jellyfin.svg
+                  - title: Jellyseerr
+                    url: ${JELLYSEERR_URL}
+                    check-url: ${JELLYSEERR_URL}ping
+                    icon: /assets/icons/jellyseerr.png
+            - type: monitor
+              cache: 1m
+              title: ArrStack
+              sites:
+                  - title: Radarr
+                    url: ${RADARR_URL}
+                    check-url: ${RADARR_URL}ping
+                    icon: /assets/icons/radarr.png
                   - title: Prowlarr
                     url: ${PROWLARR_URL}
                     check-url: ${PROWLARR_URL}ping
@@ -207,10 +222,3 @@
                     url: ${READARR_URL}
                     check-url: ${READARR_URL}ping
                     icon: /assets/icons/readarr.png
-                  - title: Jellyfin
-                    url: ${JELLYFIN_URL}
-                    icon: /assets/icons/jellyfin.svg
-                  - title: Jellyseerr
-                    url: ${JELLYSEERR_URL}
-                    check-url: ${JELLYSEERR_URL}ping
-                    icon: /assets/icons/jellyseerr.png
