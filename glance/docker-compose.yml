@@ -23,6 +23,7 @@ services:
             - JELLYFIN_URL=${JELLYFIN_URL}
             - JELLYSEERR_URL=${JELLYSEERR_URL}
             - BAZARR_URL=${BAZARR_URL}
+            - NGINX_PROXY_MANAGER_URL=${NGINX_PROXY_MANAGER_URL}
         networks:
             - nginxproxymanager_default # Connect to NPM's network
 

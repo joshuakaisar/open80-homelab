@@ -175,6 +175,10 @@
                   - title: qBittorrent
                     url: ${QBITTORRENT_URL}
                     icon: /assets/icons/qBittorrent.png
+                  - title: NGINX Proxy Manager
+                    url: ${NGINX_PROXY_MANAGER_URL}
+                    check-url: ${NGINX_PROXY_MANAGER_URL}
+                    icon: di:nginx
                   - title: Radarr
                     url: ${RADARR_URL}
                     check-url: ${RADARR_URL}ping
