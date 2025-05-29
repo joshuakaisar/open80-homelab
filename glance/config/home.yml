@@ -41,14 +41,14 @@
                   - immich-app/immich
                   - syncthing/syncthing
 
-            - type: twitch-channels
-              channels:
-                  - theprimeagen
-                  - j_blow
-                  - piratesoftware
-                  - cohhcarnage
-                  - christitustech
-                  - EJ_SA
+            # - type: twitch-channels
+            #   channels:
+            #       - theprimeagen
+            #       - j_blow
+            #       - piratesoftware
+            #       - cohhcarnage
+            #       - christitustech
+            #       - EJ_SA
 
       - size: full
         widgets:
