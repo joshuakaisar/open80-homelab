@@ -179,10 +179,6 @@
                     url: ${NGINX_PROXY_MANAGER_URL}
                     check-url: ${NGINX_PROXY_MANAGER_URL}
                     icon: di:nginx
-                  - title: Radarr
-                    url: ${RADARR_URL}
-                    check-url: ${RADARR_URL}ping
-                    icon: /assets/icons/radarr.png
                   - title: Jellyfin
                     url: ${JELLYFIN_URL}
                     icon: /assets/icons/jellyfin.svg
