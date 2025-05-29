@@ -170,7 +170,7 @@
                     url: https://github.com/search?q={QUERY}&type=repositories
             - type: monitor
               cache: 1m
-              title: Service Status
+              title: Services
               sites:
                   - title: qBittorrent
                     url: ${QBITTORRENT_URL}
