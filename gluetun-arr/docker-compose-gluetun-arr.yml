@@ -36,7 +36,7 @@ services:
             - ${ARRPATH}Sonarr/config:/config
             - ${ARRPATH}Sonarr/backup:/data/Backup
             - ${ARRPATH}Downloads:/downloads # Shared download path
-            - /mnt/nas/media/Shows:/data/shows
+            - /mnt/nas/:/data/shows
         restart: unless-stopped
 
     radarr:
