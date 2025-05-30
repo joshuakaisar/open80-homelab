@@ -187,6 +187,10 @@
                     url: ${JELLYSEERR_URL}
                     check-url: ${JELLYSEERR_URL}ping
                     icon: /assets/icons/jellyseerr.png
+                  - title: AudioBookShelf
+                    url: ${AUDIOBOOKSHELF_URL}
+                    check-url: ${AUDIOBOOKSHELF_URL}ping
+                    icon: /assets/icons/audiobookshelf.png
             - type: monitor
               cache: 1m
               title: ArrStack

@@ -24,6 +24,7 @@ services:
             - JELLYSEERR_URL=${JELLYSEERR_URL}
             - BAZARR_URL=${BAZARR_URL}
             - NGINX_PROXY_MANAGER_URL=${NGINX_PROXY_MANAGER_URL}
+            - AUDIOBOOKSHELF_URL=${AUDIOBOOKSHELF_URL}
         networks:
             - nginxproxymanager_default # Connect to NPM's network
 
