@@ -3,7 +3,7 @@ services:
         image: ghcr.io/advplyr/audiobookshelf:latest
         container_name: audiobookshelf
         ports:
-            - 13378:80
+            - 4343:80
         environment:
             - TZ=${TZ}
             - AUDIOBOOKSHELFPATH=${AUDIOBOOKSHELFPATH}
