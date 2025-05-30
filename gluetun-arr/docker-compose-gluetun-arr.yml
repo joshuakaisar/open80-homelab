@@ -84,7 +84,6 @@ services:
             - ${ARRPATH}Readarr/books:/data/books
             - ${ARRPATH}Downloads:/downloads
             - /mnt/nas/:/data/books
-            - /mnt/nas/:/data/audiobooks
         restart: unless-stopped
 
     # homarr:
