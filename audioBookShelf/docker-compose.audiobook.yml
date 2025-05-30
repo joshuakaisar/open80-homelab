@@ -12,3 +12,8 @@ services:
             - /mnt/nas/:/data/podcasts
             - ${AUDIOBOOKSHELFPATH}/audioBookShelf/config:/config
             - ${AUDIOBOOKSHELFPATH}/audioBookShelf/metadata:/metadata
+        networks:
+            - nginxproxymanager_default # Connect to NPM's network
+networks:
+    nginxproxymanager_default:
+        external: true
