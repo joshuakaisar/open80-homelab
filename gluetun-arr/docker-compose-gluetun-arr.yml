@@ -83,7 +83,8 @@ services:
             - ${ARRPATH}Readarr/config:/config
             - ${ARRPATH}Readarr/books:/data/books
             - ${ARRPATH}Downloads:/downloads
-            - /mnt/nas/media/Audiobooks:/data/Audiobooks
+            - /mnt/nas/media/Books:/data/books
+            - /mnt/nas/media/Audiobooks:/data/audiobooks
         restart: unless-stopped
 
     # homarr:
