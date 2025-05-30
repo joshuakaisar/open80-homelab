@@ -9,7 +9,6 @@ services:
             - AUDIOBOOKSHELFPATH=${AUDIOBOOKSHELFPATH}
         volumes:
             - /mnt/nas/:/data/books
-            - /mnt/nas/:/data/podcasts
             - ${AUDIOBOOKSHELFPATH}/audioBookShelf/config:/config
             - ${AUDIOBOOKSHELFPATH}/audioBookShelf/metadata:/metadata
         networks:
