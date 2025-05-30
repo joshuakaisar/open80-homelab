@@ -52,7 +52,7 @@ services:
             - ${ARRPATH}Radarr/config:/config
             - ${ARRPATH}Radarr/backup:/data/Backup
             - ${ARRPATH}Downloads:/downloads # Shared download path
-            - /mnt/nas/media/Movies:/data/movies
+            - /mnt/nas/:/data/movies
         restart: unless-stopped
 
     lidarr:
@@ -83,8 +83,8 @@ services:
             - ${ARRPATH}Readarr/config:/config
             - ${ARRPATH}Readarr/books:/data/books
             - ${ARRPATH}Downloads:/downloads
-            - /mnt/nas/media/Books:/data/books
-            - /mnt/nas/media/Audiobooks:/data/audiobooks
+            - /mnt/nas/:/data/books
+            - /mnt/nas/:/data/audiobooks
         restart: unless-stopped
 
     # homarr:
@@ -109,8 +109,8 @@ services:
         volumes:
             - /media/arr/bazarr/config:/config
             - ${ARRPATH}Downloads:/downloads # Shared download path
-            - /mnt/nas/media/Movies:/data/movies # Movies for subtitles
-            - /mnt/nas/media/Shows:/data/shows # Shows for subtitles
+            - /mnt/nas/:/data/movies # Movies for subtitles
+            - /mnt/nas/:/data/shows # Shows for subtitles
         restart: unless-stopped
 
     qbittorrent:
