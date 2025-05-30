@@ -68,6 +68,7 @@ services:
             - ${ARRPATH}Lidarr/config:/config
             - ${ARRPATH}Lidarr/music:/data/musicfolder
             - ${ARRPATH}Downloads:/downloads
+            - /mnt/nas/:/data/music
         restart: unless-stopped
 
     readarr:
