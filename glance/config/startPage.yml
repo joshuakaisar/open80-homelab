@@ -195,14 +195,14 @@
               cache: 1m
               title: ArrStack
               sites:
-                  - title: Radarr
-                    url: ${RADARR_URL}
-                    check-url: ${RADARR_URL}ping
-                    icon: /assets/icons/radarr.png
                   - title: Prowlarr
                     url: ${PROWLARR_URL}
                     check-url: ${PROWLARR_URL}ping
                     icon: /assets/icons/prowlarr.png
+                  - title: Radarr
+                    url: ${RADARR_URL}
+                    check-url: ${RADARR_URL}ping
+                    icon: /assets/icons/radarr.png
                   - title: Sonarr
                     url: ${SONARR_URL}
                     check-url: ${SONARR_URL}ping
