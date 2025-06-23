@@ -1,13 +1,20 @@
 services:
-    homeassistant:
-        container_name: homeassistant
-        image: "ghcr.io/home-assistant/home-assistant:stable"
+    homeassistant1:
+        container_name: 32-Raritian-Ave-homeAssistant
+        image: ghcr.io/home-assistant/home-assistant:stable
+        ports:
+            - "8123:8123"
         volumes:
-            - ${APPPATH}homeAssistant/config :/config
-            - /etc/localtime:/etc/localtime:ro
-            - /run/dbus:/run/dbus:ro
+            - ${APPPATH}homeAssistant/32Raritan_config :/config
         restart: unless-stopped
-        privileged: true
-        network_mode: host
         environment:
             - APPPATH=${APPPATH}
+
+    # homeassistant2:
+    #     container_name: homeassistant2
+    #     image: ghcr.io/home-assistant/home-assistant:stable
+    #     ports:
+    #         - "8124:8123" # Maps internal 8123 to external 8124
+    #     volumes:
+    #         - ./ha2_config:/config
+    #     restart: unless-stopped
