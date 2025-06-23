@@ -17,6 +17,8 @@ services:
               target: /media/shows
               read_only: true
         environment:
+            - PUID=1000
+            - PGID=1000
             - APPPATH=${APPPATH}
         restart: "unless-stopped"
         networks:
