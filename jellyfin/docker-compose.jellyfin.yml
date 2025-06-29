@@ -9,13 +9,14 @@ services:
         volumes:
             - ${APPPATH}jellyfin/config:/config
             - ${APPPATH}jellyfin/cache:/cache
-            - type: bind
-              source: /mnt/nas/Movies
-              target: /media/movies
-            - type: bind
-              source: /mnt/nas/Shows
-              target: /media/shows
-              read_only: true
+            - /mnt/nas/:/data/
+            # - type: bind
+            #   source: /mnt/nas/Movies
+            #   target: /media/movies
+            # - type: bind
+            #   source: /mnt/nas/Shows
+            #   target: /media/shows
+            #   read_only: true
         environment:
             - PUID=1000
             - PGID=1000
