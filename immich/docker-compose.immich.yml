@@ -34,6 +34,33 @@ services:
         networks:
             - nginxproxymanager_default
 
+    immich-microservices:
+        container_name: immich_microservices
+        image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
+        command: ["start-microservices.sh"]
+        volumes:
+            - ${UPLOAD_LOCATION}:/data
+            - /etc/localtime:/etc/localtime:ro
+        env_file:
+            - .env
+        depends_on:
+            - redis
+            - database
+        restart: always
+        networks:
+            - nginxproxymanager_default
+
+    immich-web:
+        container_name: immich_web
+        image: ghcr.io/immich-app/immich-web:${IMMICH_VERSION:-release}
+        restart: always
+        env_file:
+            - .env
+        depends_on:
+            - immich-server
+        networks:
+            - nginxproxymanager_default
+
     redis:
         container_name: immich_redis
         image: docker.io/valkey/valkey:8-bookworm@sha256:fea8b3e67b15729d4bb70589eb03367bab9ad1ee89c876f54327fc7c6e618571
