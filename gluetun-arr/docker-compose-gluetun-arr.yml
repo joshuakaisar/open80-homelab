@@ -130,6 +130,18 @@ services:
             - gluetun
         restart: unless-stopped
 
+    # qbittorrent-restart:
+    #     image: alpine:latest
+    #     container_name: qbittorrent-restart
+    #     command: >
+    #     sh -c "while true; do
+    #             sleep 604800; # 7 days
+    #             docker restart qbittorrent;
+    #             done"
+    #     volumes:
+    #     - /var/run/docker.sock:/var/run/docker.sock
+    #     restart: unless-stopped
+
     gluetun:
         image: qmcgaw/gluetun
         container_name: gluetun
